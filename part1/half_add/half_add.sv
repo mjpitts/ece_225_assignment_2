@@ -4,7 +4,7 @@ module half_add
   ,output [0:0] carry_o
   ,output [0:0] sum_o);
 
-   // For Lab 2, you may use assign statements!
-   // Your code here:
+  assign carry_o = a_i & b_i;
+  assign sum_o = a_i ^ b_i;
 
 endmodule

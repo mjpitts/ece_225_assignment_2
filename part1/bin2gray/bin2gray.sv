@@ -1,9 +1,14 @@
 module bin2gray
   #(parameter width_p = 5)
-   // You must fill these in with width_p
-  (input [0 : 0] bin_i
-  ,output [0 : 0] gray_o);
+  (input [width_p-1 : 0] bin_i
+  ,output [width_p-1 : 0] gray_o);
 
-   // Your code here
+  assign gray_o[width_p-1] = bin_i[width_p-1];
+
+  genvar i;
+
+  for(i = width_p-2; i >= 0; i--) begin
+    assign gray_o[i] = bin_i[i] ^ bin_i[i+1];
+  end
 
 endmodule
